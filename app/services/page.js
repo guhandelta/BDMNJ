@@ -71,7 +71,7 @@ const services = [
 
 const Services = () => {
     return (
-        <div className="flex flex-col mb-16">
+        <div className="flex flex-col gap-6">
             <Image src={ServicesImage} height={48} width={600} alt="Services" className='w-full h-full mb-6' />
             <h1 className="text-center text-4xl text-amber-900 font-bold">OUR SERVICES</h1>
             <h4 className="text-center mt-8 text-2xl">Discover our services</h4>
@@ -79,35 +79,16 @@ const Services = () => {
             Backed by a team of experienced professionals, our strategic services meet the needs of all types and sizes of clients - from small startups to large firms - and deliver lasting changes with measurable growth. Please get in touch with us today to learn how Business Data Management can help your future success.
             </p>
 
-            <div className="container m-auto grid grid-cols-3 gap-3 sm:grid-cols-3 sm:gap-2">
-                {services.map(({id, name, image, contents, color}) => <Cards key={id} image={image} title={name} contents={contents} color={color} />)}
-                {/*<div className="tile bg-teal-500">
-                    <h1 className="tile-marker">ONE</h1>
-                </div>
-                <div className="tile bg-amber-500">
-                    <h1 className="tile-marker">TWO</h1>
-                </div>
-                <div className="tile bg-yellow-500">
-                    <h1 className="tile-marker">THREE</h1>
-                </div>
-                <div className="tile bg-lime-600">
-                    <h1 className="tile-marker">FOUR</h1>
-                </div>
-                <div className="tile bg-green-600">
-                    <h1 className="tile-marker">FIVE</h1>
-                </div>
-                <div className="tile bg-emerald-500">
-                    <h1 className="tile-marker">SIX</h1>
-                </div>
-                <div className="tile bg-teal-500">
-                    <h1 className="tile-marker">SEVEN</h1>
-                </div>
-                <div className="tile bg-purple-500">
-                    <h1 className="tile-marker">EIGHT</h1>
-                </div>
-                <div className="tile bg-pink-500">
-                    <h1 className="tile-marker">NINE</h1>
-                </div>*/}
+            <div className="container m-auto sm:pl-[10%] sm:gap-6 sm:mt-6 md:grid md:grid-cols-3 gap-1 sm:flex sm:flex-col border border-solid">
+                {services.map(({id, name, image, contents, color}) => (
+                    <Cards 
+                        key={id} 
+                        image={image} 
+                        title={name} 
+                        contents={contents} 
+                        color={color} 
+                    />
+                ))}
             </div>
         </div>
     )

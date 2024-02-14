@@ -1,24 +1,38 @@
 import { Header } from "@/components";
 import Image from "next/image";
 
-import JobSearch from '../public/job_search.png';
+import { HomePage } from "@/components";
 
 export default function Home() {
   return (
     <>
-
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="flex flex-row h-24 w-full">
-        <div className="flex flex-col w-[55%]">
-            <Image src={JobSearch} height={800} width={800} className="object-cover scale-110 mt-6" alt="Job Search" />
-        </div>
-        <div className="flex flex-col w-[50%] text-center pt-[20%]">
-          <p className="text-5xl font-bold text-black">BUSINESS DATA MANAGEMENT:</p>
-          <p className="text-5xl font-bold text-green-500">GLOBAL SOLUTIONS</p>
-          <p className="text-2xl text-green-500">Specialized Consulting</p>
-        </div>
-      </div>
-    </main>
+      <HomePage />
+      { /*<div className="flex h-full flex-col">
+        <span className="flex flex-row h-full w-full">
+        
+        <div className="flex flex-col items-end w-full text-left h-full border border-solid border-black">
+          <Image 
+            src={JobSearch} 
+            height={0} 
+            width={0} 
+            layout="fill" 
+            objectFit="fill"
+            style={{ mixBlendMode: "color", marginLeft: '-8', }} 
+            className="w-full h-full mt-6" 
+            alt="Job Search" 
+          />
+              <div className=""></div>
+              <div className=""></div>
+              <div className=" text-center h-full">
+                <p className="text-7xl font-bold text-red-600">BUSINESS</p> <br />
+                <p className="text-7xl font-bold text-red-600">DATA</p> <br />
+                <p className="text-7xl font-bold text-red-600">MANAGEMENT</p> <br />
+                <p className="text-5xl text-left font-bold text-red-600">GLOBAL SOLUTIONS</p> <br />
+                <p className="text-2xl text-red-600 text-center">Specialized Consulting</p>
+              </div>
+            </div>
+        </span>
+      </div>*/}
     </>
   );
 }

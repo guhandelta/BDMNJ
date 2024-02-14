@@ -1,6 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components";
+import localFont from '@next/font/local'
+
+const Anurati = localFont({
+  src: '../public/fonts/Anurati.otf',
+  variable: '--font-anurati',
+})
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,8 +18,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
+      <body className="overflow-x-scroll overflow-y-scroll no-scrollbar ">
+        <Header className="z-20" />
         {children}
       </body>
     </html>

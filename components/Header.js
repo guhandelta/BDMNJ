@@ -1,10 +1,14 @@
 "use client"
-import { useRouter } from 'next/navigation';
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation'
 import { motion } from "framer-motion"
 
 import { MoonIcon, SunIcon } from "./Icons";
-import Logo from './Logo'
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+import { GrMapLocation } from "react-icons/gr";
+import BDMLogo from '@/public/images/bdm.png'
 import Link from 'next/link';
 
 const CustomLink = ({ href, title, className="" }) => {
@@ -60,32 +64,60 @@ const CustomAnchor = ({ href, children }) =>(
 )
 
 const Header = () => {
-
+    const PathName = usePathname();
+    PathName && console.log('PathName:\t', PathName);
+    PathName && console.log('Edited PathName:\t', PathName.replace('/',''));
     return (
         <header 
-            className="w-full px-6 font-medium flex flex-col bg-transparent justify-between text-black dark:text-light"
+            className="w-full h-24 mb-0 px-6 z-20 font-medium flex flex-col bg-white justify-between text-black dark:text-light"
         >
-            <div className="flex flex-row h-12 border-b-2 p-2 justify-between w-full">
+            <div className="md:flex md:flex-row h-8 border-b-2 pt-1 justify-between w-full sm:hidden">
                 <div className='flex justify-start'>
-                    <p className="text-sm">609.503.9338</p> &nbsp;|&nbsp;
-                    <a className='text-sm' href="mailto:info@bdmnj.com">info@bdmnj.com</a> &nbsp;|&nbsp;
-                    <Link href='https://maps.app.goo.gl/aeKt44DEf4AXVKss6'>
-                        <p className='text-sm hover:underline hover:text-cyan-700'>1239 US-130, Robbinsville, NJ</p>
+                    <div className="flex flow-row gap-2">
+                        <FaPhoneAlt className='scale-125' />
+                        <p className="text-sm">609.503.9338</p> &nbsp;
+                    </div>
+                    <a className='text-sm flex flow-row gap-2 border-l-2 border-r-2 border-black px-4' href="mailto:info@bdmnj.com">
+                        <MdOutlineEmail className='scale-150 mt-[4px]' />
+                        info@bdmnj.com
+                    </a> &emsp;
+                    <Link target='blank' href='https://maps.app.goo.gl/aeKt44DEf4AXVKss6' className='flex flow-row gap-2'>
+                        <GrMapLocation className='scale-125' />
+                        <p className='text-sm hover:text-cyan-700 hover:no-underline'>1239 US-130, Robbinsville, NJ</p>
                     </Link> 
                 </div>
                 <div className="flex justify-end">
                     <p className='text-sm hover:underline hover:text-cyan-700'>FAQ</p>
                 </div>
             </div>
-            <div className="flex border-b-0 justify-around">
-                <div className="top-2 -translate-x-[50%] justify-start scale-110">
-                    <Logo />
+            <div className="flex justify-around border-b-2 p-1">
+                <div className="top-2 -translate-x-[50%] justify-start flex flex-row">
+                    <Link href="/">
+                        <Image src={BDMLogo} height={0} width={0} alt="BDMNJ" className='h-14 w-14 mr-1' />
+                    </Link>
+                    <div className="flex flex-col">
+                        <p className='-mt-1 font-bold'>Business</p>
+                        <p className='-mt-1 font-bold'>Data</p>
+                        <p className='-mt-1 font-bold'>Management</p>
+                    </div>
                 </div>
             
-                <nav className='items-center pl-[20%] -pb-2 my-3 justify-end'>
-                    {links.map(({ id, label, url }) => (
-                        <CustomLink key={id} href={url} title={label} className="mx-8" />
-                    ))}
+                <nav className='items-center pl-[20%] -pb-2 my-3 justify-end sm:hidden md:flex md:flow-row'>
+                    {links.map(({ id, label, url }) => {
+                        console.log("label:\t", label);
+                        console.log("url:\t", url);
+                        console.log("PathName Edit\t", PathName.replace('/',''));
+                        console.log("URL Edit\t", url.replace('/',''));
+                        console.log("Comparison\t", PathName.replace('/','') === label.toLowerCase());
+                        label === 'Home' && url==='/' && console.log("Home Page");
+                        return(
+                        <CustomLink 
+                            key={id} 
+                            href={url} 
+                            title={label} 
+                            className={`mx-8 ${ PathName.replace('/','') === label.toLowerCase() ?'text-red-600 font-bold text-xl':'text-black'} hover:text-red-600 font-bold `}
+                        />
+                    )})}
                 </nav>
             </div>
             {/*<button
@@ -103,40 +135,6 @@ const Header = () => {
             </nav> */}
 
         </header>
-        // <div className="flex flex-col h-16 px-24 mb-6 w-full bg-transparent justify-between bg-slate-200 text-black">
-            // <div className="flex flex-row h-12 border-b-2 p-4">
-            //     <p className="text-sm">609.503.9338 </p> &nbsp;|&nbsp;
-            //     <a className='text-sm' href="mailto:info@bdmnj.com">info@bdmnj.com</a> &nbsp;|&nbsp;
-            //     <Link href='https://maps.app.goo.gl/aeKt44DEf4AXVKss6'>
-            //         <p className='text-sm hover:underline hover:text-cyan-700'>1239 US-130, Robbinsville, NJ</p>
-            //     </Link> 
-            // </div>
-
-        //     <div className="flex flex-row">
-        //         <Image src={BDM} className='sm:w-12 sm:h-12 h-16 w-16 ml-4 my-2' alt='BDMNJ' />
-        //         <Link href='/'>
-        //             <h2 className="font-bold text-xl ml-4 my-4 tracking-wider">BUSINESS DATA MANAGEMENT</h2>
-        //         </Link> 
-            
-        //         {
-        //             links.map(({ id, label, url }) => (
-        //                 <li className='list-none' key={id}>
-        //                     <Link className='mx-4 md:flex my-6 text-l hover:underline' href={url}>{label}</Link> 
-        //                 </li>
-        //             ))
-        //         }
-        //         {/*<li className='list-none'>
-        //             <Link className='mx-4 md:flex my-4 text-xl hover:font-bold' href='/about'>About</Link> 
-        //         </li>
-        //         <li className='list-none'>
-        //             <Link className='mx-4 md:flex my-4 text-xl hover:font-bold' href='/services'>Services</Link> 
-        //         </li>
-        //         <li className='list-none'>
-        //             <Link className='mx-4 md:flex my-4 text-xl hover:font-bold' href='/contact'>Contact</Link> 
-        //         </li>*/}
-        //     </div>
-
-        // </div>
     )
 }
 
