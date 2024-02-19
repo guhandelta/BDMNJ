@@ -5,8 +5,8 @@ import JobSearch from '../public/meeting.jpeg';
 const Hero = () => {
     return (
         <>
-            <div className="flex flex-col h-[75%] border-2 border-solid border-black">
-                <div className="grid grid-cols-10 w-full border-black">
+            <div className="flex flex-col h-auto border-2">
+                <div className="grid grid-cols-10 grid-rows-1 w-full border-black -mb-[24em]">
                     <div className="col-span-9 h-[60%]">
                         <Image 
                             src={JobSearch} 

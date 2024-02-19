@@ -1,10 +1,31 @@
 import Image from 'next/image'
 import Meeting from '@/public/images/meeting.png'
+import DataManagement from '@/public/images/datamgmt.png'
+import ProjectManagement from '@/public/images/projectmgmt.png'
+import BusinessProcessManagement from '@/public/images/businessprocessmgmt.png'
+import FinancialManagement from '@/public/images/financialmgmt.png'
+import WebDevelopment from '@/public/images/webdevelopment.png'
+import BusinesService from '@/public/images/businesservice.png'
+import { DOPCardData1, DOPCardData2 } from '@/constants'
+
+// <a href="https://www.flaticon.com/free-icons/process" title="process icons">Process icons created by netscript - Flaticon</a>
+
+
+// ]
+
+
+const DOPCard = ({ title, src }) => <div className="w-full h-32 text-center mb-16 flex flex-col">
+{title}
+    
+    <Image src={src} alt='Data Management' height={108} width={72} className='mx-[37%] my-[5%]'  />
+</div>
+
+
 
 const Accomplishments = () => {
     return (
 
-        <div className="grid grid-cols-2 gap-20 w-full h-3/4 justify-between px-8">
+        <div className="grid grid-cols-2 gap-20 w-full h-auto justify-between px-8 -mb-[36em]">
 
                 <Image 
                     src={Meeting}
@@ -26,22 +47,12 @@ const Accomplishments = () => {
                     <div className="grid grid-cols-2 gap-4 px-6 pt-6 justify-between">
                         <div className="col-span-1">
                             <div className="flex flex-col">
-                                <div className="w-full h-32 text-center  mb-16">
-                                DATA MANAGEMENT</div>
-                                <div className="w-full h-32 text-center  mb-16">
-                                BUSINESS PROCESS MANAGEMENT</div>
-                                <div className="w-full h-32 text-center ">
-                                FINANCIAL MANAGEMENT</div>
+                                {DOPCardData1.map(({ id, title, image}) => <DOPCard key={id} title={title} src={image} />)}
                             </div>
                         </div>
                         <div className="col-span-1">
                             <div className="flex flex-col">
-                                <div className="w-full h-32 text-center  mb-16">
-                                PROJECT MANAGEMENT</div>
-                                <div className="w-full h-32 text-center  mb-16">
-                                WEBSITE DEVELOPMENT</div>
-                                <div className="w-full h-32 text-center ">
-                                BUSINESS SERVICES</div>
+                                {DOPCardData2.map(({ id, title, image}) => <DOPCard key={id} title={title} src={image} />)}
                             </div>
                         </div>
                     </div>

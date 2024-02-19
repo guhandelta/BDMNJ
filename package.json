@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/styled": "^11.11.0",
     "@next/font": "^14.1.0",
     "framer-motion": "^11.0.3",
     "next": "14.1.0",
