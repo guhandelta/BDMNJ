@@ -115,7 +115,7 @@ const Header = () => {
                             key={id} 
                             href={url} 
                             title={label} 
-                            className={`mx-8 ${ PathName.replace('/','') === label.toLowerCase() ?'text-red-600 font-bold text-xl':'text-black'} hover:text-red-600 font-bold `}
+                            className={`mx-8 ${ PathName.replace('/','') === label.toLowerCase() ?'text-red-600 font-bold':'text-black'} hover:text-red-600 hover:font-bold font-mono text-xl`}
                         />
                     )})}
                 </nav>

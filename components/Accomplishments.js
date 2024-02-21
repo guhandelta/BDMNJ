@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Meeting from '@/public/images/meeting.png'
+import Meeting from '@/public/images/financialmeeting.png'
 import DataManagement from '@/public/images/datamgmt.png'
 import ProjectManagement from '@/public/images/projectmgmt.png'
 import BusinessProcessManagement from '@/public/images/businessprocessmgmt.png'
@@ -14,10 +14,10 @@ import { DOPCardData1, DOPCardData2 } from '@/constants'
 // ]
 
 
-const DOPCard = ({ title, src }) => <div className="w-full h-32 text-center mb-16 flex flex-col">
-{title}
+const DOPCard = ({ title, src }) => <div className="w-full h-32 text-center mb-16 flex flex-col [&>h2]:text-red-600 [&>h2]:font-bold">
+<h2>{title}</h2>
     
-    <Image src={src} alt='Data Management' height={108} width={72} className='mx-[37%] my-[5%]'  />
+    <Image src={src} alt='Data Management' height={108} width={72} className='mx-[37%] my-[5%] opacity-50'  />
 </div>
 
 
@@ -25,8 +25,9 @@ const DOPCard = ({ title, src }) => <div className="w-full h-32 text-center mb-1
 const Accomplishments = () => {
     return (
 
-        <div className="grid grid-cols-2 gap-20 w-full h-auto justify-between px-8 -mb-[36em]">
+        <div className="grid grid-cols-2 gap-20 w-full h-auto justify-between px-8 -mb-[36em] mt-[28em]">
 
+            <div className="col-span-1">
                 <Image 
                     src={Meeting}
                     height={0}
@@ -34,14 +35,33 @@ const Accomplishments = () => {
                     alt='meeting'
                     className=''
                 />
+                <div className="flex flex-col items-start gap-2 justify-center -mt-[46em] pl-6 ">
+                        <div className="flex flex-col font-bold pr-4 pb-8">
+                            <h1 className='text-[4em] text-gray-600 text-center'>2<span className='text-red-600'>4</span></h1>
+                            <h3 className='text-gray-600 font-bold text-xl ml-3'>Training Programs</h3>
+                        </div>
+                        <div className="flex flex-col border-t-2 border-b-2 border-spacing-6 px-6 py-8 border-white">
+                            <h1 className='text-[4em] text-gray-200 text-center'>6<span className='text-red-600'>K</span></h1>
+                            <h3 className='text-white font-bold text-xl'>Satisfied Clients</h3>
+                        </div>
+                        <div className="flex flex-col font-bold border-b-2 pl-6 py-8">
+                            <h1 className='text-[4em] text-gray-300 text-center'>24<span className='text-red-600'>K</span></h1>
+                            <h3 className='text-white  text-xl'>Finished Projects</h3>
+                        </div>
+                        <div className="flex flex-col font-bold pl-6 pt-6">
+                            <h1 className='text-[4em] text-gray-200 text-center'>36<span className='text-red-600'>$</span></h1>
+                            <h3 className='text-white  text-xl'>Business Turnover</h3>
+                        </div>
+                    </div>
+            </div>
 
             <div className="">
                 <div className="flex flex-col -pt-8">
                     <h6 className="text-base text-red-500">What We Do</h6>
                     <div className="flex">
-                        <h1 className='text-5xl font-bold first-letter:text-7xl first-letter:text-red-500'>Develop</h1>
-                        <h1 className='text-5xl font-bold first-letter:text-7xl first-letter:text-red-500'>Your</h1> &emsp;
-                        <h1 className='text-5xl font-bold first-letter:text-7xl first-letter:text-red-500'>Business</h1>
+                        <h1 className='text-5xl text-gray-500 font-bold first-letter:text-7xl first-letter:text-red-500'>Develop</h1>
+                        <h1 className='text-5xl text-gray-500 font-bold first-letter:text-7xl first-letter:text-red-500'>Your</h1> &emsp;
+                        <h1 className='text-5xl text-gray-500 font-bold first-letter:text-7xl first-letter:text-red-500'>Business</h1>
                     </div>
                     <h6 className="text-[1.25rem] text-gray-500">Our team of experts brings together a unique blend of technical prowess, strategic thinking, and a deep understanding of the challenges modern businesses face. We specialize in providing comprehensive data management solutions, from data collection and storage to analysis and actionable insights, ensuring that your business is not just data-rich but also insight-driven.</h6>
                     <div className="grid grid-cols-2 gap-4 px-6 pt-6 justify-between">

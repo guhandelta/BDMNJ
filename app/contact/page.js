@@ -40,7 +40,7 @@ const Contact = () => {
         )}
         <input 
           type='submit' 
-          className='w-full h-6 pt-4 pb-10 text-xl focus:outline focus:border-blue-600 focus:outline-offset-2 hover:font-bold hover:text-white rounded-md hover:rounded-br-xl hover:rounded-tl-xl bg-green-600'
+          className='w-full h-6 pt-4 pb-10 text-xl font-bold focus:outline focus:border-red-600 focus:outline-offset-2 hover:font-bold hover:text-white rounded-md hover:rounded-br-xl hover:rounded-tl-xl bg-gray-500 hover:bg-red-600'
           value='Submit'
         />
       </div>
