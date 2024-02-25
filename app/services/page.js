@@ -19,7 +19,7 @@ const Services = () => {
             <Image src={ServicesImage} height={48} width={600} alt="Services" className='w-full h-full mb-6' />
             <h2 className="text-center mt-8 text-[3em] my-8 text-red-600">Discover our services</h2>
             <p className="text-center text-xl mx-[20%] mb-12 font-mono text-gray-500">
-            Are you ready to redefine your professional journey and achieve new heights in your career? Our training and staffing agency is here to guide you through the exploration and mastery of the most sought-after skills across a wide range of industries. With our specialized training programs, you&apos;ll not only enhance your skill set but also build a robust portfolio that opens doors to exciting career opportunities. Let us empower you to transform your work life and embark on a path to success.
+            Are you ready to redefine your professional journey and achieve new heights in your career? Our training and staffing agency is here to guide you through the exploration and mastery of the most sought-after skills across a wide range of industries. With our specialized training programs, you will not only enhance your skill set but also build a robust portfolio that opens doors to exciting career opportunities. Let us empower you to transform your work life and embark on a path to success.
             </p>
 
             <div class="flex flex-col bg-white mx-auto mb-18 p-auto">
