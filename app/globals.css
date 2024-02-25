@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --dynamic-border-color: #000; /* Default border color */
+    --dynamic-box-border-color: #fff; /* Default border color */
+}
+
 // add the code bellow
 @layer utilities {
         /* Hide scrollbar for Chrome, Safari and Opera */

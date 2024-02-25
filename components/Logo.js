@@ -15,7 +15,7 @@ const Logo = () => {
             //     backgroundColor,
             //     transition: { duration: 1, repeat: Infinity }
             // }}
-        >BDM</MotionLink>
+        ></MotionLink>
     </div>
     )
 }

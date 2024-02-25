@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 
@@ -5,10 +6,11 @@ import Cards from '@/components/Cards'
 import ServicesImage from '@/public/images/services.png';
 import { DOPCardData1, DOPCardData2, ServiceCardProps, ServicesSectionCardData1, ServicesSectionCardData2 } from '@/constants';
 import Meeting from '@/public/images/meetings.png'
+import { AnimatedNumbers } from '@/utils';
 
 const DOPCard = ({ title, src }) => <div className="w-full h-32 text-center my-16 flex flex-col [&>h1]:text-red-600">
-    <h1 className='font-bold text-xl'>{title}</h1>
-    <Image src={src} alt='Data Management' height={108} width={72} className='mx-[37%] my-[5%] opacity-50'  />
+    <h1 className='font-bold text-2xl'>{title}</h1>
+    <Image src={src} alt='Data Management' height={148} width={112} className='mx-[37%] my-[5%] opacity-50'  />
 </div>
 
 const Services = () => {
@@ -24,7 +26,7 @@ const Services = () => {
                 <div class="flex overflow-x-scroll pb-10 no-scrollbar">
                     <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
                         <div class="flex gap-24 px-3">
-                        {/*<div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>*/}
+                            {/*<div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>*/}
                             {ServiceCardProps.map(({ id, name, gist, image}) => (
                                 <div key={id} class="w-[64em] h-[38em] max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-2xl hover:bg-red-200 hover:text-gray-600 [&>h2]:text-red-600 [&>h2]:hover:text-gray-600 hover:border-4 hover:border-gray-400 hover:border-solid duration-300 ease-in-out">
                                     <h2 className='text-center my-4 font-bold '>{name}</h2>
@@ -49,16 +51,27 @@ const Services = () => {
                     />
                     <div className="flex items-center gap-2 justify-center py8">
                         <div className="flex flex-col font-bold pr-4">
-                            <h1 className='text-[3em] text-gray-300 text-center'>2<span className='text-red-600'>4</span></h1>
-                            <h3 className='text-white text-base'>Training Programs</h3>
+                            <h1 className='text-[4em] text-gray-300 text-center'>
+                                <AnimatedNumbers value={2} />
+                                <span className='text-red-600'>
+                                    <AnimatedNumbers value={4} />
+                                </span>
+                            </h1>
+                            <h3 className='text-white text-2xl'>Training Programs</h3>
                         </div>
                         <div className="flex flex-col border-l-2 border-r-2 border-spacing-6 px-6 border-white">
-                            <h1 className='text-[3em] text-gray-300 text-center'>6<span className='text-red-600'>K</span></h1>
-                            <h3 className='text-white font-bold text-base'>Satisfied Clients</h3>
+                            <h1 className='text-[4em] text-gray-300 text-center'>
+                                <AnimatedNumbers value={6} />
+                                <span className='text-red-600'>K</span>
+                            </h1>
+                            <h3 className='text-white font-bold text-2xl'>Satisfied Clients</h3>
                         </div>
                         <div className="flex flex-col font-bold pl-6">
-                            <h1 className='text-[3em] text-gray-300 text-center'>24<span className='text-red-600'>K</span></h1>
-                            <h3 className='text-white  text-base'>Finished Projects</h3>
+                            <h1 className='text-[4em] text-gray-300 text-center'>
+                                <AnimatedNumbers value={24} />
+                                <span className='text-red-600'>K</span>
+                            </h1>
+                            <h3 className='text-white text-2xl'>Finished Projects</h3>
                         </div>
                     </div>
                 </div>

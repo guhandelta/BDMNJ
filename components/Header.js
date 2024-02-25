@@ -69,25 +69,25 @@ const Header = () => {
     PathName && console.log('Edited PathName:\t', PathName.replace('/',''));
     return (
         <header 
-            className="w-full h-24 mb-0 px-6 z-20 font-medium flex flex-col bg-white justify-between text-black dark:text-light"
+            className="w-full h-24 mb-8 px-6 z-20 font-medium flex flex-col bg-white justify-between text-black dark:text-light"
         >
-            <div className="md:flex md:flex-row h-8 border-b-2 pt-1 justify-between w-full sm:hidden">
+            <div className="md:flex md:flex-row h-16 border-b-2 py-4 justify-between w-full sm:hidden">
                 <div className='flex justify-start'>
                     <div className="flex flow-row gap-2">
                         <FaPhoneAlt className='scale-125' />
-                        <p className="text-sm">609.503.9338</p> &nbsp;
+                        <p className="text-lg">609.503.9338</p> &nbsp;
                     </div>
-                    <a className='text-sm flex flow-row gap-2 border-l-2 border-r-2 border-black px-4' href="mailto:info@bdmnj.com">
+                    <a className='text-lg flex flow-row gap-2 border-l-2 border-r-2 border-black px-4' href="mailto:info@bdmnj.com">
                         <MdOutlineEmail className='scale-150 mt-[4px]' />
                         info@bdmnj.com
                     </a> &emsp;
                     <Link target='blank' href='https://maps.app.goo.gl/aeKt44DEf4AXVKss6' className='flex flow-row gap-2'>
                         <GrMapLocation className='scale-125' />
-                        <p className='text-sm hover:text-cyan-700 hover:no-underline'>1239 US-130, Robbinsville, NJ</p>
+                        <p className='text-lg hover:text-cyan-700 hover:no-underline'>1239 US-130, Robbinsville, NJ</p>
                     </Link> 
                 </div>
                 <div className="flex justify-end">
-                    <p className='text-sm hover:underline hover:text-cyan-700'>FAQ</p>
+                    <p className='text-lg hover:underline hover:text-cyan-700'>FAQ</p>
                 </div>
             </div>
             <div className="flex justify-around border-b-2 p-1">

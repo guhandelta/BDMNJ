@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="overflow-x-scroll overflow-y-scroll no-scrollbar ">
-        <Header className="z-20" />
+        <Header className="z-20 border border-dashed border-black" />
         {children}
       </body>
     </html>
