@@ -222,7 +222,7 @@ const OurServices = () => {
 
                 <div className="w-full border border-solid border-black grid grid-cols-4">
                     <div className="col-span-4">
-                        <p className="font-mono text-[1.5em] text-start text-gray-500">We do not want to push our ideas on to customers, we simply want to make what they want.</p>
+                        <p className="font-mono text-[1.5em] text-start text-gray-500">We don&apos;t want to push our ideas on to customers, we simply want to make what they want.</p>
                     </div>
                 </div>
             </div>

@@ -51,14 +51,12 @@ const WhyBDM = () => {
                         <h1 className="text-center text-[2em] text-white font-bold">Why BDM</h1><br />
                         <h3 className="text-center text-[1.6em] text-white font-bold">BDM helps enterprises succeed in driving Business and digital transformation</h3><br />
                         <div className="px-16">
-                            <p className='text-center text-[1.4em] text-white'>We specialize in training candidates for with the skills needed to navigate today's business landscape. In a world where organizations are often overwhelmed by the demands of technology adoption and cultural change, we provide comprehensive management training programs to ensure your team stays focused on building and maintaining a strong digital infrastructure. With BDM, empower your leaders to confidently drive sustainable growth and align every initiative with your organization's goals.
+                            <p className='text-center text-[1.4em] text-white'>We specialize in training candidates for with the skills needed to navigate today&apos;s business landscape. In a world where organizations are often overwhelmed by the demands of technology adoption and cultural change, we provide comprehensive management training programs to ensure your team stays focused on building and maintaining a strong digital infrastructure. With BDM, empower your leaders to confidently drive sustainable growth and align every initiative with your organization&apos;s goals.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div className="grid grid-cols-9 gap-[6em] -mt-[17em]">
-                    {/*<div className="h-[12em] w-[24em] border border-dashed border-white float-end">
-                    <div className="col-span-1"></div>*/}
                     <div className="col-span-1"></div>
                     <div className="col-span-6">
                         <div className="grid grid-cols-3 gap-6">
@@ -74,7 +72,6 @@ const WhyBDM = () => {
                         </div>
                     </div>
                     <div className="col-span-1"></div>
-                    {/*</div>*/}
                 </div>
             </div>
         </div>
